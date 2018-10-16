@@ -1,0 +1,479 @@
+﻿-- 10/15/2018 5:33:21 PM :    at Microsoft.SharePoint.Client.Idcrl.IdcrlAuth.GetUserRealm(String login)
+   at Microsoft.SharePoint.Client.Idcrl.IdcrlAuth.GetServiceToken(String username, String password, String serviceTarget, String servicePolicy)
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetAuthenticationCookie(Uri url, String username, SecureString password, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.SharePointOnlineCredentials.GetAuthenticationCookie(Uri url, Boolean refresh, Boolean alwaysThrowOnFailure)
+   at Microsoft.SharePoint.Client.ClientRuntimeContext.SetupRequestCredential(ClientRuntimeContext context, HttpWebRequest request)
+   at Microsoft.SharePoint.Client.SPWebRequestExecutor.GetRequestStream()
+   at Microsoft.SharePoint.Client.ClientContext.GetWebRequestExecutor()
+   at Microsoft.SharePoint.Client.ClientContext.GetFormDigestInfoPrivate()
+   at Microsoft.SharePoint.Client.ClientContext.EnsureFormDigest()
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.GetSiteData(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 42
+
+
+-- 10/15/2018 5:33:22 PM :    at Microsoft.SharePoint.Client.Idcrl.IdcrlAuth.GetUserRealm(String login)
+   at Microsoft.SharePoint.Client.Idcrl.IdcrlAuth.GetServiceToken(String username, String password, String serviceTarget, String servicePolicy)
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetAuthenticationCookie(Uri url, String username, SecureString password, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.SharePointOnlineCredentials.GetAuthenticationCookie(Uri url, Boolean refresh, Boolean alwaysThrowOnFailure)
+   at Microsoft.SharePoint.Client.ClientRuntimeContext.SetupRequestCredential(ClientRuntimeContext context, HttpWebRequest request)
+   at Microsoft.SharePoint.Client.SPWebRequestExecutor.GetRequestStream()
+   at Microsoft.SharePoint.Client.ClientContext.GetWebRequestExecutor()
+   at Microsoft.SharePoint.Client.ClientContext.GetFormDigestInfoPrivate()
+   at Microsoft.SharePoint.Client.ClientContext.EnsureFormDigest()
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.DownloadFile(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 307
+
+
+-- 10/15/2018 5:33:24 PM :    at Microsoft.SharePoint.Client.Idcrl.IdcrlAuth.GetUserRealm(String login)
+   at Microsoft.SharePoint.Client.Idcrl.IdcrlAuth.GetServiceToken(String username, String password, String serviceTarget, String servicePolicy)
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetAuthenticationCookie(Uri url, String username, SecureString password, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.SharePointOnlineCredentials.GetAuthenticationCookie(Uri url, Boolean refresh, Boolean alwaysThrowOnFailure)
+   at Microsoft.SharePoint.Client.ClientRuntimeContext.SetupRequestCredential(ClientRuntimeContext context, HttpWebRequest request)
+   at Microsoft.SharePoint.Client.SPWebRequestExecutor.GetRequestStream()
+   at Microsoft.SharePoint.Client.ClientContext.GetWebRequestExecutor()
+   at Microsoft.SharePoint.Client.ClientContext.GetFormDigestInfoPrivate()
+   at Microsoft.SharePoint.Client.ClientContext.EnsureFormDigest()
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.GetDocumentData(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 72
+
+
+-- 10/15/2018 5:48:54 PM :    at Microsoft.SharePoint.Client.Idcrl.IdcrlAuth.GetUserRealm(String login)
+   at Microsoft.SharePoint.Client.Idcrl.IdcrlAuth.GetServiceToken(String username, String password, String serviceTarget, String servicePolicy)
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetAuthenticationCookie(Uri url, String username, SecureString password, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.SharePointOnlineCredentials.GetAuthenticationCookie(Uri url, Boolean refresh, Boolean alwaysThrowOnFailure)
+   at Microsoft.SharePoint.Client.ClientRuntimeContext.SetupRequestCredential(ClientRuntimeContext context, HttpWebRequest request)
+   at Microsoft.SharePoint.Client.SPWebRequestExecutor.GetRequestStream()
+   at Microsoft.SharePoint.Client.ClientContext.GetWebRequestExecutor()
+   at Microsoft.SharePoint.Client.ClientContext.GetFormDigestInfoPrivate()
+   at Microsoft.SharePoint.Client.ClientContext.EnsureFormDigest()
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.GetSiteData(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 43
+
+
+-- 10/15/2018 5:52:20 PM :    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   at System.IO.File.Create(String path)
+   at SPAssessment.SiteData.DownloadFile(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 317
+
+
+-- 10/15/2018 5:52:31 PM :    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   at System.IO.File.ReadAllBytes(String path)
+   at SPAssessment.SiteData.UploadFileAgain(String url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 342
+
+
+-- 10/15/2018 5:55:05 PM :    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   at System.IO.File.Create(String path)
+   at SPAssessment.SiteData.DownloadFile(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 317
+
+
+-- 10/15/2018 5:55:17 PM :    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   at System.IO.File.ReadAllBytes(String path)
+   at SPAssessment.SiteData.UploadFileAgain(String url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 342
+
+
+-- 10/15/2018 7:09:52 PM :    at Microsoft.SharePoint.Client.SharePointOnlineCredentials..ctor(String username, SecureString password)
+   at SPAssessment.SiteData.GetSiteData(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 41
+
+
+-- 10/15/2018 7:51:34 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 301
+
+
+-- 10/15/2018 7:51:37 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 301
+
+
+-- 10/15/2018 7:53:18 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 301
+User cannot be found.
+
+
+-- 10/15/2018 7:53:21 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 301
+User cannot be found.
+
+
+-- 10/15/2018 8:05:15 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 312
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:05:17 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 298
+User cannot be found.
+
+
+-- 10/15/2018 8:05:20 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 298
+User cannot be found.
+
+
+-- 10/15/2018 8:11:01 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 312
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:11:03 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 298
+User cannot be found.
+
+
+-- 10/15/2018 8:11:07 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 298
+User cannot be found.
+
+
+-- 10/15/2018 8:14:17 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 312
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:14:19 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 298
+User cannot be found.
+
+
+-- 10/15/2018 8:14:24 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 298
+User cannot be found.
+
+
+-- 10/15/2018 8:18:33 PM :    at Microsoft.SharePoint.Client.FileCollection.Add(FileCreationInformation parameters)
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 311
+The 'parameters' argument cannot be null.
+Parameter name: parameters
+
+
+-- 10/15/2018 8:18:33 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 232
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:18:33 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 286
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:18:33 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 297
+User cannot be found.
+
+
+-- 10/15/2018 8:18:33 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 312
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:18:33 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 312
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:18:37 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 313
+The file MyDocuments/ChromeSetup.exe has been modified by i:0#.f|membership|arvind.torvi@acuvate.c on 15 Oct 2018 07:48:38 -0700.
+
+
+-- 10/15/2018 8:18:37 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 297
+User cannot be found.
+
+
+-- 10/15/2018 8:18:40 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 313
+Version conflict.
+
+
+-- 10/15/2018 8:29:42 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 231
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:29:43 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 285
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:29:43 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 295
+User cannot be found.
+
+
+-- 10/15/2018 8:29:43 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 231
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:29:43 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 285
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:29:43 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 295
+User cannot be found.
+
+
+-- 10/15/2018 8:33:21 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 231
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:33:22 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 285
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:33:22 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 295
+User cannot be found.
+
+
+-- 10/15/2018 8:33:22 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 231
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:33:22 PM :    at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 285
+Object reference not set to an instance of an object.
+
+
+-- 10/15/2018 8:33:22 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 295
+User cannot be found.
+
+
+-- 10/15/2018 8:45:29 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UploadFileAgain(String url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 369
+The file https://acuvatehyd.sharepoint.com/teams/shubhamtrial/Shared Documents/FilePathExcelFile.xlsx is locked for shared use by arvind.torvi@acuvate.com [membership].
+
+
+-- 10/15/2018 8:58:21 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 297
+User cannot be found.
+
+
+-- 10/15/2018 9:00:58 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 300
+User cannot be found.
+
+
+-- 10/16/2018 10:28:27 AM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 288
+Invalid data has been used to update the list item. The field you are trying to update may be read only.
+
+
+-- 10/16/2018 10:28:27 AM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 297
+User cannot be found.
+
+
+-- 10/16/2018 10:28:41 AM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UploadFileAgain(String url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 364
+The file https://acuvatehyd.sharepoint.com/teams/shubhamtrial/Shared Documents/FilePathExcelFile.xlsx is locked for shared use by arvind.torvi@acuvate.com [membership].
+
+
+-- 10/16/2018 10:33:36 AM :    at System.Net.HttpWebRequest.GetResponse()
+   at Microsoft.SharePoint.Client.SPWebRequestExecutor.Execute()
+   at Microsoft.SharePoint.Client.File.OpenBinaryDirect(ClientContext context, String serverRelativeUrl)
+   at SPAssessment.SiteData.DownloadFile(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 337
+The underlying connection was closed: A connection that was expected to be kept alive was closed by the server.
+
+
+-- 10/16/2018 10:39:32 AM :    at System.Net.HttpWebRequest.GetResponse()
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetIdcrlHeader(Uri url, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetAuthenticationCookie(Uri url, String username, SecureString password, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.SharePointOnlineCredentials.GetAuthenticationCookie(Uri url, Boolean refresh, Boolean alwaysThrowOnFailure)
+   at Microsoft.SharePoint.Client.ClientRuntimeContext.SetupRequestCredential(ClientRuntimeContext context, HttpWebRequest request)
+   at Microsoft.SharePoint.Client.SPWebRequestExecutor.GetRequestStream()
+   at Microsoft.SharePoint.Client.ClientContext.GetWebRequestExecutor()
+   at Microsoft.SharePoint.Client.ClientContext.GetFormDigestInfoPrivate()
+   at Microsoft.SharePoint.Client.ClientContext.EnsureFormDigest()
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.GetSiteData(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 46
+Unable to connect to the remote server
+
+
+-- 10/16/2018 10:40:11 AM :    at System.Net.HttpWebRequest.GetResponse()
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetIdcrlHeader(Uri url, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetAuthenticationCookie(Uri url, String username, SecureString password, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.SharePointOnlineCredentials.GetAuthenticationCookie(Uri url, Boolean refresh, Boolean alwaysThrowOnFailure)
+   at Microsoft.SharePoint.Client.ClientRuntimeContext.SetupRequestCredential(ClientRuntimeContext context, HttpWebRequest request)
+   at Microsoft.SharePoint.Client.SPWebRequestExecutor.GetRequestStream()
+   at Microsoft.SharePoint.Client.ClientContext.GetWebRequestExecutor()
+   at Microsoft.SharePoint.Client.ClientContext.GetFormDigestInfoPrivate()
+   at Microsoft.SharePoint.Client.ClientContext.EnsureFormDigest()
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.GetSiteData(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 46
+Unable to connect to the remote server
+
+
+-- 10/16/2018 10:40:49 AM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 288
+Invalid data has been used to update the list item. The field you are trying to update may be read only.
+
+
+-- 10/16/2018 10:40:49 AM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UpdateLibrabryData(String text, String Column) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 297
+User cannot be found.
+
+
+-- 10/16/2018 5:40:51 PM :    at Microsoft.SharePoint.Client.ClientObject.CheckUninitializedProperty(String propName)
+   at Microsoft.SharePoint.Client.FieldMultiChoice.get_Choices()
+   at SPAssessment.SiteData.UpdateLibraryData(DataRow row) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 238
+The property or field 'Choices' has not been initialized. It has not been requested or the request has not been executed. It may need to be explicitly requested.
+
+
+-- 10/16/2018 5:41:42 PM :    at Microsoft.SharePoint.Client.ClientObject.CheckUninitializedProperty(String propName)
+   at Microsoft.SharePoint.Client.FieldMultiChoice.get_Choices()
+   at SPAssessment.SiteData.UpdateLibraryData(DataRow row) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 238
+The property or field 'Choices' has not been initialized. It has not been requested or the request has not been executed. It may need to be explicitly requested.
+
+
+-- 10/16/2018 5:41:48 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UploadFileAgain(String url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 464
+The file https://acuvatehyd.sharepoint.com/teams/shubhamtrial/Shared Documents/FilePathExcelFile.xlsx is locked for shared use by arvind.torvi@acuvate.com [membership].
+
+
+-- 10/16/2018 5:42:50 PM :    at System.Net.HttpWebRequest.GetResponse()
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetIdcrlHeader(Uri url, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetAuthenticationCookie(Uri url, String username, SecureString password, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.SharePointOnlineCredentials.GetAuthenticationCookie(Uri url, Boolean refresh, Boolean alwaysThrowOnFailure)
+   at Microsoft.SharePoint.Client.ClientRuntimeContext.SetupRequestCredential(ClientRuntimeContext context, HttpWebRequest request)
+   at Microsoft.SharePoint.Client.SPWebRequestExecutor.GetRequestStream()
+   at Microsoft.SharePoint.Client.ClientContext.GetWebRequestExecutor()
+   at Microsoft.SharePoint.Client.ClientContext.GetFormDigestInfoPrivate()
+   at Microsoft.SharePoint.Client.ClientContext.EnsureFormDigest()
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.GetSiteData(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 46
+Unable to connect to the remote server
+
+
+-- 10/16/2018 5:42:56 PM :    at Microsoft.SharePoint.Client.SharePointOnlineCredentials..ctor(String username, SecureString password)
+   at SPAssessment.SiteData.GetSiteData(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 40
+The 'username' argument cannot be null.
+Parameter name: username
+
+
+-- 10/16/2018 5:43:35 PM :    at System.Net.HttpWebRequest.GetResponse()
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetIdcrlHeader(Uri url, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.Idcrl.SharePointOnlineAuthenticationProvider.GetAuthenticationCookie(Uri url, String username, SecureString password, Boolean alwaysThrowOnFailure, EventHandler`1 executingWebRequest)
+   at Microsoft.SharePoint.Client.SharePointOnlineCredentials.GetAuthenticationCookie(Uri url, Boolean refresh, Boolean alwaysThrowOnFailure)
+   at Microsoft.SharePoint.Client.ClientRuntimeContext.SetupRequestCredential(ClientRuntimeContext context, HttpWebRequest request)
+   at Microsoft.SharePoint.Client.SPWebRequestExecutor.GetRequestStream()
+   at Microsoft.SharePoint.Client.ClientContext.GetWebRequestExecutor()
+   at Microsoft.SharePoint.Client.ClientContext.GetFormDigestInfoPrivate()
+   at Microsoft.SharePoint.Client.ClientContext.EnsureFormDigest()
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.GetSiteData(String Url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 46
+Unable to connect to the remote server
+
+
+-- 10/16/2018 5:44:55 PM :    at Microsoft.SharePoint.Client.ClientObject.CheckUninitializedProperty(String propName)
+   at Microsoft.SharePoint.Client.FieldMultiChoice.get_Choices()
+   at SPAssessment.SiteData.UpdateLibraryData(DataRow row) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 238
+The property or field 'Choices' has not been initialized. It has not been requested or the request has not been executed. It may need to be explicitly requested.
+
+
+-- 10/16/2018 5:44:55 PM :    at Microsoft.SharePoint.Client.ClientObject.CheckUninitializedProperty(String propName)
+   at Microsoft.SharePoint.Client.FieldMultiChoice.get_Choices()
+   at SPAssessment.SiteData.UpdateLibraryData(DataRow row) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 238
+The property or field 'Choices' has not been initialized. It has not been requested or the request has not been executed. It may need to be explicitly requested.
+
+
+-- 10/16/2018 5:46:53 PM :    at Microsoft.SharePoint.Client.ClientObject.CheckUninitializedProperty(String propName)
+   at Microsoft.SharePoint.Client.FieldMultiChoice.get_Choices()
+   at SPAssessment.SiteData.UpdateLibraryData(DataRow row) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 240
+The property or field 'Choices' has not been initialized. It has not been requested or the request has not been executed. It may need to be explicitly requested.
+
+
+-- 10/16/2018 5:46:54 PM :    at Microsoft.SharePoint.Client.ClientObject.CheckUninitializedProperty(String propName)
+   at Microsoft.SharePoint.Client.FieldMultiChoice.get_Choices()
+   at SPAssessment.SiteData.UpdateLibraryData(DataRow row) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 240
+The property or field 'Choices' has not been initialized. It has not been requested or the request has not been executed. It may need to be explicitly requested.
+
+
+-- 10/16/2018 5:46:55 PM :    at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at SPAssessment.SiteData.UploadFileAgain(String url) in D:\My Tasks\SPAssessment\SPAssessment\SiteData.cs:line 464
+User cannot be found.
+
+
