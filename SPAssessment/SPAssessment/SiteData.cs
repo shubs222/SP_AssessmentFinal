@@ -173,7 +173,8 @@ namespace SPAssessment
         {
             try
             {
-                List list = ClientCntx.Web.Lists.GetByTitle("MyDocuments");
+                string Listname = "MyDocuments";
+                List list = ClientCntx.Web.Lists.GetByTitle(Listname);
                 string FileName = row["File Path"].ToString();
                 string FileStatus = row["Status"].ToString();
                 string CreatedBy = row["created by"].ToString();
@@ -181,8 +182,9 @@ namespace SPAssessment
 
                 System.IO.FileInfo Fileinfo = new System.IO.FileInfo(FileName);
                 User user = SiteUsers.GetByEmail(CreatedBy);
+               
                 ClientCntx.Load(user);
-                ClientCntx.ExecuteQuery();
+               ClientCntx.ExecuteQuery();
                 if (Fileinfo.Exists)
                 {
 
@@ -191,6 +193,7 @@ namespace SPAssessment
                     if (Fileinfo.Length < 2000000 && Fileinfo.Length > 100000)
                     {
                         
+
                         ListItem DepartmentItem = GetDepartment(Department);
                         FileCreationInformation Fcreateinfo = new FileCreationInformation();
                         Fcreateinfo.Url = Fileinfo.Name;
@@ -199,37 +202,49 @@ namespace SPAssessment
                         File FileToUpload = list.RootFolder.Files.Add(Fcreateinfo);
                         ClientCntx.Load(list);
                         ClientCntx.ExecuteQuery();
-                        ListItem Listitem = FileToUpload.ListItemAllFields;
-                       
-                        Field field = list.Fields.GetByTitle("FIle_Status");
-                        FieldChoice choice = ClientCntx.CastTo<FieldChoice>(field);
-                        ClientCntx.Load(choice);
-                        ClientCntx.ExecuteQuery();
-                        string[] MyStatus = FileStatus.ToUpper().Split(',');
-                        string StatusUpload = string.Empty;
-                        for (int choicecount = 0; choicecount < MyStatus.Length; choicecount++)
+
+                        try
                         {
-                            if (choice.Choices.Contains(MyStatus[choicecount].Trim()))
+                            ListItem Listitem = FileToUpload.ListItemAllFields;
+
+                            Field field = list.Fields.GetByTitle("FIle_Status");
+                            FieldChoice choice = ClientCntx.CastTo<FieldChoice>(field);
+                            ClientCntx.Load(choice);
+                            ClientCntx.ExecuteQuery();
+                            string[] MyStatus = FileStatus.ToUpper().Split(',');
+                            string StatusUpload = string.Empty;
+                            for (int choicecount = 0; choicecount < MyStatus.Length; choicecount++)
                             {
-                                if (choicecount == MyStatus.Length - 1)
+                                if (choice.Choices.Contains(MyStatus[choicecount].Trim()))
                                 {
-                                    StatusUpload = StatusUpload + MyStatus[choicecount];
-                                }
-                                else
-                                {
-                                    StatusUpload = StatusUpload + MyStatus[choicecount] + ";";
+                                    if (choicecount == MyStatus.Length - 1)
+                                    {
+                                        StatusUpload = StatusUpload + MyStatus[choicecount];
+                                    }
+                                    else
+                                    {
+                                        StatusUpload = StatusUpload + MyStatus[choicecount] + ";";
+                                    }
                                 }
                             }
-                        }
 
-                        Listitem["File_Type"] = System.IO.Path.GetExtension(FileName);
-                        Listitem["FIle_Status"] = StatusUpload;
-                        Listitem["FileCreatedBy"] = user.Title;
-                        Listitem["Department_Name"] = DepartmentItem.Id;
-                        Listitem.Update();
-                        ClientCntx.ExecuteQuery();
-                        Reason = "NA";
-                        Status = true;
+                            Listitem["File_Type"] = System.IO.Path.GetExtension(FileName);
+                            Listitem["FIle_Status"] = StatusUpload;
+                            Listitem["FileCreatedBy"] = user.Title;
+                            Listitem["Department_Name"] = DepartmentItem.Id;
+                            Listitem.Update();
+                            ClientCntx.ExecuteQuery();
+                            Reason = "NA";
+                            Status = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            Reason = "Department not found";
+                            Console.WriteLine("Department not found");
+                            WriteToLog.WriteToLogs(ex);
+                           
+                         }
+
                     }
                     else
                     {
@@ -254,7 +269,7 @@ namespace SPAssessment
             }
             catch (Exception ex)
             {
-                Status = false;
+              
                 WriteToLog.WriteToLogs(ex);
             }
 
@@ -263,7 +278,8 @@ namespace SPAssessment
 
         private ListItem GetDepartment(string DepartmentName)
         {
-            List DeptList = ClientCntx.Web.Lists.GetByTitle("Department");
+            string Listname = "Department";
+            List DeptList = ClientCntx.Web.Lists.GetByTitle(Listname);
             ClientCntx.Load(DeptList);
             ClientCntx.ExecuteQuery();
             CamlQuery camlQuery = new CamlQuery();
@@ -274,129 +290,6 @@ namespace SPAssessment
             return DepartmentItems[0];
         }
 
-
-        /****************************************************Update Document library items***************************************/
-        //private bool UpdateLibrabryData(string text, string Column)
-        //{
-        //    try
-        //    {
-        //        List list = ClientCntx.Web.Lists.GetByTitle("MyDocuments");
-
-        //        if (Column.StartsWith("A"))
-        //        {
-        //            Fileinfo = new System.IO.FileInfo(text);
-
-        //            if (Fileinfo.Exists)
-        //            {
-
-        //                double Filesize = (Fileinfo.Length / 1e+6);
-        //                FileSize = Filesize + "mb";
-        //                Console.WriteLine("size: " + Filesize);
-        //                if (Fileinfo.Length < 2000000 && Fileinfo.Length > 100000)
-        //                {
-
-        //                    Fcreateinfo = new FileCreationInformation();
-        //                    Fcreateinfo.Url = Fileinfo.Name;
-        //                    Fcreateinfo.Content = System.IO.File.ReadAllBytes(text);
-        //                    Fcreateinfo.Overwrite = true;
-        //                    FileToUpload = list.RootFolder.Files.Add(Fcreateinfo);
-        //                    ClientCntx.Load(list);
-        //                    ClientCntx.ExecuteQuery();
-        //                    Status = true;
-        //                    Listitem = FileToUpload.ListItemAllFields;
-        //                    Listitem["File_Type"] = System.IO.Path.GetExtension(text);
-        //                    Listitem.Update();
-        //                    ClientCntx.ExecuteQuery();
-        //                    Reason = "NA";
-        //                    Console.WriteLine("File : {0} uploaded Successfully", Fileinfo.Name);
-        //                }
-        //                else
-        //                {
-
-        //                    if (Fileinfo.Length < 100000)
-        //                    {
-        //                        Reason = "File size is Less than Required file size";
-        //                        Console.WriteLine(Reason);
-        //                        Status = false;
-        //                    }
-        //                    else
-        //                    {
-        //                        Reason = "File size is more than Required file size";
-        //                        Console.WriteLine(Reason);
-        //                        Status = false;
-        //                    }
-
-        //                }
-
-        //            }
-        //            else
-        //            {
-        //                Reason = "File Does not exist";
-        //                Console.WriteLine(Reason);
-        //                Status = false;
-        //            }
-        //        }
-
-        //        if (Column.StartsWith("B") && Status)
-        //        {
-        //            Field field = list.Fields.GetByTitle("FIle_Status");
-        //            FieldChoice choice = ClientCntx.CastTo<FieldChoice>(field);
-        //            ClientCntx.Load(choice);
-        //            ClientCntx.ExecuteQuery();
-        //            string[] MyStatus = text.ToUpper().Split(',');
-        //            string StatusUpload = string.Empty;
-        //            for (int choicecount = 0; choicecount < MyStatus.Length; choicecount++)
-        //            {
-        //                if (choice.Choices.Contains(MyStatus[choicecount].Trim()))
-        //                {
-        //                    if (choicecount == MyStatus.Length - 1)
-        //                    {
-        //                        StatusUpload = StatusUpload + MyStatus[choicecount];
-        //                    }
-        //                    else
-        //                    {
-        //                        StatusUpload = StatusUpload + MyStatus[choicecount] + ";";
-        //                    }
-        //                }
-        //            }
-        //            Listitem = FileToUpload.ListItemAllFields;
-        //            Listitem["FIle_Status"] = StatusUpload;
-        //            Listitem.Update();
-        //            ClientCntx.ExecuteQuery();
-        //            Status = true;
-        //        }
-        //        if (Column.StartsWith("C") && Status)
-        //        {
-        //            try
-        //            {
-        //                User user = SiteUsers.GetByEmail(text);
-        //                ClientCntx.Load(user);
-        //                ClientCntx.ExecuteQuery();
-        //                Listitem = FileToUpload.ListItemAllFields;
-        //                Listitem["FileCreatedBy"] = user.Title;
-        //                Listitem.Update();
-        //                ClientCntx.ExecuteQuery();
-        //                Status = true;
-        //            }
-        //            catch (Exception userexe)
-        //            {
-        //                Reason = "User not found";
-        //                Console.WriteLine();
-        //                WriteToLog.WriteToLogs(userexe);
-        //                Status = false;
-        //                FileToUpload.DeleteObject();
-        //            }
-
-        //        }
-
-        //    }
-        //    catch (Exception Exceptions)
-        //    {
-        //        Console.WriteLine("Error while updating the Data: ");
-        //        WriteToLog.WriteToLogs(Exceptions);
-        //    }
-        //    return Status;
-        //}
 
         /***********************************************Download file from sharepoint site****************************************/
         public void DownloadFile(string Url)
@@ -432,8 +325,9 @@ namespace SPAssessment
         {
             try
             {
+                string Listname = "Documents";
 
-                List list = ClientCntx.Web.Lists.GetByTitle("Documents");
+                List list = ClientCntx.Web.Lists.GetByTitle(Listname);
                 FileCreationInformation Fcinfo = new FileCreationInformation();
                 Fcinfo.Url = "FilePathExcelFile.xlsx";
                 Fcinfo.Content = System.IO.File.ReadAllBytes(@"D:\FilePathExcelFile.xlsx");
@@ -471,168 +365,4 @@ namespace SPAssessment
 
     }
 }
-
-
-/****************************************************Previous Code*****************************************************/
-//int lastRow;
-//public void UpdateExcelData()
-//{
-
-//        MyApp = new Excel.Application();
-//        MyApp.Visible = false;
-//        MyBook = MyApp.Workbooks.Open(@"D:\FilePathExcelFile.xlsx");
-//        MySheet = (Excel.Worksheet)MyBook.Sheets[1]; // Explicit cast is not required here
-//        lastRow = MySheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
-//    MySheet.Cells[lastRow, 1] = emp.Name;
-
-//}
-
-
-
-
-
-
-
-//   Create new Spreadsheet
-//Spreadsheet document = new Spreadsheet();
-
-//   // add new worksheet
-//   Microsoft.Office.Interop.Excel.Worksheet Sheet = document.Workbook.Worksheets.Add("FormulaDemo");
-
-//            // headers to indicate purpose of the column
-//            Sheet.Cell("A1").Value = "Formula (as text)";
-//            // set A column width
-//            Sheet.Columns[0].Width = 250;
-
-//            Sheet.Cell("B1").Value = "Formula (calculated)";
-//            // set B column width
-//            Sheet.Columns[1].Width = 250;
-
-
-//            // write formula as text 
-//            Sheet.Cell("A2").Value = "7*3+2";
-//            // write formula as formula
-//            Sheet.Cell("B2").Value = "=7*3+2";
-
-//            // delete output file if exists already
-//            if (File.Exists("Output.xls"))
-//            {
-//                File.Delete("Output.xls");
-//            }
-
-//            // Save document
-//            document.SaveAs("Output.xls");
-
-//            // Close Spreadsheet
-//            document.Close();
-
-//            // open generated XLS document in default program
-//            Process.Start("Output.xls");
-
-//        }
-
-//    }
-//}
-
-
-
-//public void UploadData(string Url, string UserName, SecureString passwrd)
-//{
-//    using (clientcntx = new ClientContext(Url))
-//    {
-//        clientcntx.Credentials = new SharePointOnlineCredentials(UserName, passwrd);
-//        List list = clientcntx.Web.Lists.GetByTitle("MyDocuments");
-
-//        for (int FPitems = 0; FPitems < items.Count; FPitems+=4)
-//        {
-//            System.IO.FileInfo fi = new System.IO.FileInfo(items[FPitems]);
-//            Console.WriteLine("size: "+fi.Length);
-//            if (!(fi.Length > 15000000))
-//            {
-//                FileCreationInformation fcinfo = new FileCreationInformation();
-//                string whole = items[FPitems];
-//                string[] splitwhole = whole.Split(Convert.ToChar(92));
-//                string last = splitwhole[splitwhole.Length - 1];
-//                fcinfo.Url = last;
-//                string path = items[FPitems];
-//                fcinfo.Content = System.IO.File.ReadAllBytes(path);
-//                fcinfo.Overwrite = true;
-//                File fileToUpload = list.RootFolder.Files.Add(fcinfo);
-//                clientcntx.Load(list);
-//                clientcntx.ExecuteQuery();
-//ListItemCreationInformation itemCreationInformation = new ListItemCreationInformation();
-
-//                clientcntx.ExecuteQuery();  
-
-//            }
-//            //CreatdBy();
-//            else
-//            {
-//                Console.WriteLine("cant insert data");
-//            }
-//        }
-
-//        //SPWeb web = new SPSite(/*your web url or variable*/).OpenWeb();
-//        //SPDocumentLibrary docLib = (SPDocumentLibrary)web.Lists[/*here your document library*/];
-//        //docLib.Fields.Add("columName1", SPFieldType.Text, false);
-//    }
-//}
-
-//public void CreatdBy()
-//{
-//    for (int authercount = 2; authercount < items.Count; authercount+=4)
-//    {
-//        List list = clientcntx.Web.Lists.GetByTitle("MyDocuments");
-//        //ListItemCreationInformation itemCreationInformation = new ListItemCreationInformation();
-//        //FileCollection fc = list.AddItem(itemCreationInformation);
-//        //li["FileCreatedBy"] = items[authercount];
-
-//        //li.Update();
-//        //clientcntx.ExecuteQuery();
-
-//        var creationInformation = new ListItemCreationInformation();
-//        Microsoft.SharePoint.Client.ListItem listItem = list.AddItem(creationInformation);
-//        listItem.FieldValues["FileCreatedBy"] = items[authercount];
-//        listItem.Update();
-//        clientcntx.ExecuteQuery();
-
-//    }
-//}
-
-//public void GetLookupValue(string Url, string UserName, SecureString passwrd)
-//{
-//    using (clientcntx = new ClientContext(Url))
-//    {
-//        clientcntx.Credentials = new SharePointOnlineCredentials(UserName, passwrd);
-
-//        ListItem item = clientcntx.Web.Lists.GetByTitle("Department").GetItemById(1);
-
-//        clientcntx.Load(item);
-//        clientcntx.ExecuteQuery();
-
-//        FieldLookupValue lookup = item["Department_Name"] as FieldLookupValue;
-//        string lvalue = lookup.LookupValue;
-//        int lId = lookup.LookupId;
-//    }
-//}
-
-//public void SetLookupValue(string Url, string UserName, SecureString passwrd)
-//{
-//    using (clientcntx = new ClientContext(Url))
-//    {
-//        clientcntx.Credentials = new SharePointOnlineCredentials(UserName, passwrd);
-
-//        ListItem item = clientcntx.Web.Lists.GetByTitle("Department").GetItemById(1);
-
-//        clientcntx.Load(item);
-//        clientcntx.ExecuteQuery();
-
-//        FieldLookupValue lookup = item["Department_Name"] as FieldLookupValue;
-//        lookup.LookupId = 9;
-//        item["Department_Name"] = lookup;
-//        item.Update();
-//        clientcntx.ExecuteQuery();
-//    }
-
-//}
 
