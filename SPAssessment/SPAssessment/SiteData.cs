@@ -163,7 +163,7 @@ namespace SPAssessment
         /**********************************update local excel file and update the data**************************************/
         private void UpdateExcelFile(int rowNum,string reason,string fileSize,string uploadStatus)
         {
-            MySheet.Cells[rowNum, 5] = fileSize;
+            MySheet.Cells[rowNum,5] = fileSize;
             MySheet.Cells[rowNum, 6] = uploadStatus;
             MySheet.Cells[rowNum, 7] = Reason;
         }
@@ -175,15 +175,16 @@ namespace SPAssessment
             {
                 string Listname = "MyDocuments";
                 List list = ClientCntx.Web.Lists.GetByTitle(Listname);
-                string FileName = row["File Path"].ToString();
-                string FileStatus = row["Status"].ToString();
-                string CreatedBy = row["created by"].ToString();
-                string Department = row["Department"].ToString();
+                string FileName = row[Settings.FilePath].ToString();
+                string FileStatus = row[Settings.FileStatus].ToString();
+                string CreatedBy = row[Settings.CreatedBy].ToString();
+                string Department = row[Settings.Department].ToString();
 
                 System.IO.FileInfo Fileinfo = new System.IO.FileInfo(FileName);
-                User user = SiteUsers.GetByEmail(CreatedBy);
+                User user = SiteUsers.GetByEmail(CreatedBy); 
                  ClientCntx.Load(user);
                  ClientCntx.ExecuteQuery();
+
                 if (Fileinfo.Exists)
                 {
 
@@ -261,14 +262,17 @@ namespace SPAssessment
                 }
                 else
                 {
-                    Reason = "File Does not exist";
+                    Reason ="File Does not exist";
+                   
                     Console.WriteLine(Reason);
 
                 }
             }
             catch (Exception ex)
             {
-              
+                Reason = "User Does not exist";
+                FileSize = "";
+                Status = false;
                 WriteToLog.WriteToLogs(ex);
             }
 
@@ -328,7 +332,7 @@ namespace SPAssessment
 
                 List list = ClientCntx.Web.Lists.GetByTitle(Listname);
                 FileCreationInformation Fcinfo = new FileCreationInformation();
-                Fcinfo.Url = Settings.LocalFilePath;
+                Fcinfo.Url = "FilePathExcelFile.xlsx";
                 Fcinfo.Content = System.IO.File.ReadAllBytes(Settings.LocalFilePath);
                 Fcinfo.Overwrite = true;
                 File FileToUpload = list.RootFolder.Files.Add(Fcinfo);
