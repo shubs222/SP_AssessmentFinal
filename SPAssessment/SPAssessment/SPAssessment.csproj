@@ -118,6 +118,7 @@
     <Compile Include="MyData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="SiteData.cs" />
     <Compile Include="UserCredentials.cs" />
     <Compile Include="WriteToLog.cs" />
